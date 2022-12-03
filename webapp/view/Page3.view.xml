@@ -1,0 +1,173 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.untitledPrototypeCopy.controller.Page3" xmlns:uxap="sap.uxap" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:statusindicator="sap.suite.ui.commons.statusindicator">
+    <uxap:ObjectPageLayout showTitleInHeaderContent="false" showHeaderContent="true" showEditHeaderButton="false" showFooter="false" class="sapUiSizeCompact">
+        <uxap:headerTitle>
+            <uxap:ObjectPageHeader objectTitle="{Descripcion}" objectSubtitle="{ID}" isObjectIconAlwaysVisible="false" isObjectTitleAlwaysVisible="true" isObjectSubtitleAlwaysVisible="true" showPlaceholder="true" objectImageURI="/build/uilibraries/content/static/image-canvas.svg">
+                <uxap:navigationBar>
+                    <Bar>
+                        <contentLeft>
+                            <Button type="Back" press="_onFioriObjectPageHeaderPress"/>
+                        </contentLeft>
+                        <contentMiddle>
+                            <Title text="Nuevos Productos"/>
+                        </contentMiddle>
+                        <contentRight/>
+                    </Bar>
+                </uxap:navigationBar>
+                <uxap:actions>
+                    <Button text="Salvar" iconFirst="false" type="Emphasized" enabled="true" press="_onFioriObjectPageActionButtonPress">
+                        <layoutData>
+                            <OverflowToolbarLayoutData moveToOverflow="true"/>
+                        </layoutData>
+                    </Button>
+                </uxap:actions>
+                <uxap:breadCrumbsLinks/>
+            </uxap:ObjectPageHeader>
+        </uxap:headerTitle>
+        <uxap:headerContent/>
+        <uxap:sections>
+            <uxap:ObjectPageSection title="">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="">
+                        <uxap:blocks>
+                            <layout:Grid defaultSpan="XL12 L12 M12 S12">
+                                <layout:content>
+                                    <form:Form>
+                                        <form:layout>
+                                            <form:ResponsiveGridLayout labelSpanXL="12" labelSpanL="12" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="4" columnsL="3" columnsM="2" singleContainerFullSize="false"/>
+                                        </form:layout>
+                                        <form:formContainers>
+                                            <form:FormContainer title="">
+                                                <form:formElements>
+                                                    <form:FormElement>
+                                                        <form:label>
+                                                            <Label text="Nombre/Descripción" required="true"/>
+                                                        </form:label>
+                                                        <form:fields>
+                                                            <Input value="{Descripcion}" type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+                                                        </form:fields>
+                                                    </form:FormElement>
+                                                    <form:FormElement>
+                                                        <form:label>
+                                                            <Label text="Cantidad" required="true"/>
+                                                        </form:label>
+                                                        <form:fields>
+                                                            <Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+                                                        </form:fields>
+                                                    </form:FormElement>
+                                                    <form:FormElement>
+                                                        <form:label>
+                                                            <Label text="Categoría" required="true"/>
+                                                        </form:label>
+                                                        <form:fields>
+                                                            <ComboBox selectedKey="{Categoria}" editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%" items="{path:'/ProductSet', templateShareable:true}">
+                                                                <items>
+                                                                    <core:Item text="{Categoria}" enabled="true" key="{Categoria}"/>
+                                                                </items>
+                                                            </ComboBox>
+                                                        </form:fields>
+                                                    </form:FormElement>
+                                                    <form:FormElement>
+                                                        <form:label>
+                                                            <Label text="Temporada" required="true"/>
+                                                        </form:label>
+                                                        <form:fields>
+                                                            <ComboBox selectedKey="{Temporada}" editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%" items="{path:'/ProductSet', templateShareable:true}">
+                                                                <items>
+                                                                    <core:Item text="{Temporada}" enabled="true" key="{Temporada}"/>
+                                                                </items>
+                                                            </ComboBox>
+                                                        </form:fields>
+                                                    </form:FormElement>
+                                                    <form:FormElement>
+                                                        <form:label>
+                                                            <Label text="Precio" required="true"/>
+                                                        </form:label>
+                                                        <form:fields>
+                                                            <HBox alignItems="Stretch" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div" visible="true" displayInline="false">
+                                                                <items>
+                                                                    <Input value="{path: 'Precio', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}" type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+                                                                    <Input value="{UnidadPr}" type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+                                                                </items>
+                                                                <layoutData/>
+                                                            </HBox>
+                                                        </form:fields>
+                                                    </form:FormElement>
+                                                    <form:FormElement>
+                                                        <form:label>
+                                                            <Label text="Costo" required="true"/>
+                                                        </form:label>
+                                                        <form:fields>
+                                                            <HBox alignItems="Stretch" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div" visible="true" displayInline="false">
+                                                                <items>
+                                                                    <Input value="{path: 'Costo', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}" type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+                                                                    <Input value="{UnidadPr2}" type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+                                                                </items>
+                                                                <layoutData/>
+                                                            </HBox>
+                                                        </form:fields>
+                                                    </form:FormElement>
+                                                </form:formElements>
+                                            </form:FormContainer>
+                                            <form:FormContainer title="">
+                                                <form:formElements>
+                                                    <form:FormElement>
+                                                        <form:label>
+                                                            <Label text="Disponibilidad" required="false"/>
+                                                        </form:label>
+                                                        <form:fields>
+                                                            <Text text="Text" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                                        </form:fields>
+                                                    </form:FormElement>
+                                                </form:formElements>
+                                            </form:FormContainer>
+                                            <form:FormContainer title="Disponibilidad">
+                                                <form:formElements>
+                                                    <form:FormElement>
+                                                        <form:label>
+                                                            <Label text="" required="false"/>
+                                                        </form:label>
+                                                        <form:fields>
+                                                            <statusindicator:StatusIndicator width="50px" height="50px" value="60" showLabel="false" labelPosition="Left">
+                                                                <statusindicator:groups>
+                                                                    <statusindicator:ShapeGroup>
+                                                                        <statusindicator:shapes>
+                                                                            <statusindicator:CustomShape fillColor="green" definition="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 32 32&quot; id=&quot;uniE213&quot;>&lt;path d=&quot;M22.5 11.375Q21.562 10 20.125 9.156t-3.063-1.094V-.001q3.938.313 7.25 2.313t5.313 5.313zm-5 12.438q1.063-.188 2-.656t1.688-1.156l6 5.438q-1.625 1.563-3.688 2.656t-4.438 1.594q-3.25.625-6.344-.063T7.062 29.22t-4.344-4.344-2.406-5.875.031-6.344 2.375-5.625 4.344-4.344T12.937.25q.5-.125 1.031-.156T15.062 0v8.063q-.438 0-.625.063-1.625.313-2.938 1.219t-2.156 2.156-1.188 2.813-.031 3.188 1.219 2.938 2.188 2.156 2.813 1.188 3.156.031zm14.188-10.938q.688 3.625-.188 7t-3 6.063l-5.938-5.375q.875-1.313 1.219-2.906t.031-3.219q-.063-.313-.125-.656t-.188-.656l7.063-3.688q.75 1.563 1.125 3.438z&quot;/>&lt;/svg>" fillingDirection="Up"/>
+                                                                        </statusindicator:shapes>
+                                                                    </statusindicator:ShapeGroup>
+                                                                </statusindicator:groups>
+                                                                <statusindicator:propertyThresholds>
+                                                                    <statusindicator:PropertyThreshold fillColor="green" toValue="100"/>
+                                                                </statusindicator:propertyThresholds>
+                                                            </statusindicator:StatusIndicator>
+                                                        </form:fields>
+                                                    </form:FormElement>
+                                                    <form:FormElement>
+                                                        <form:label>
+                                                            <Label text="" required="false"/>
+                                                        </form:label>
+                                                        <form:fields>
+                                                            <Text text="{StockLevel}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                                        </form:fields>
+                                                    </form:FormElement>
+                                                </form:formElements>
+                                            </form:FormContainer>
+                                        </form:formContainers>
+                                    </form:Form>
+                                </layout:content>
+                            </layout:Grid>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+        </uxap:sections>
+        <uxap:footer>
+            <OverflowToolbar design="auto">
+                <content>
+                    <ToolbarSpacer/>
+                    <Button text="Save" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                    <Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                </content>
+            </OverflowToolbar>
+        </uxap:footer>
+    </uxap:ObjectPageLayout>
+</mvc:View>

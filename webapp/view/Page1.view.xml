@@ -1,0 +1,111 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.untitledPrototypeCopy.controller.Page1" xmlns:f="sap.f" xmlns:variants="sap.ui.comp.variants" xmlns="sap.m" xmlns:filterbar="sap.ui.comp.filterbar" xmlns:core="sap.ui.core">
+    <f:DynamicPage headerExpanded="true" showFooter="false" class="sapUiSizeCompact">
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <variants:VariantManagement/>
+                </f:heading>
+                <f:actions>
+                    <ToolbarSpacer/>
+                    <Button icon="sap-icon://action" type="Transparent"/>
+                </f:actions>
+            </f:DynamicPageTitle>
+        </f:title>
+        <f:header>
+            <f:DynamicPageHeader pinnable="true">
+                <f:content>
+                    <filterbar:FilterBar id="ListReportFilterBar" useToolbar="false" showGoOnFB="true" searchEnabled="true">
+                        <filterbar:filterItems>
+                            <filterbar:FilterItem label="Filtrar por categoría" name="Fiori_ListReport_ListReport_0-filterBars-Fiori_ListReport_FilterBar-1-filters-Fiori_ListReport_ComboBoxFilter-1668800108491---0">
+                                <filterbar:control>
+                                    <MultiComboBox>
+                                        <items>
+                                            <core:Item key="ProntaModa; Línea" text="ProntaModa; Línea"/>
+                                        </items>
+                                    </MultiComboBox>
+                                </filterbar:control>
+                            </filterbar:FilterItem>
+                        </filterbar:filterItems>
+                    </filterbar:FilterBar>
+                </f:content>
+            </f:DynamicPageHeader>
+        </f:header>
+        <f:content>
+            <VBox fitContainer="true">
+                <items>
+                    <Table width="100%" growing="true" growingScrollToLoad="true" growingThreshold="25" mode="SingleSelectLeft" itemPress="_onFioriListReportTableItemPress" updateFinished="_onFioriListReportTableUpdateFinished" items="{path:'/ProductSet', templateShareable:true}">
+                        <headerToolbar>
+                            <OverflowToolbar design="Transparent">
+                                <content>
+                                    <Title textAlign="Begin" text="Productos"/>
+                                    <Title text="(1)"/>
+                                    <ToolbarSpacer/>
+                                    <Button text="Eliminar" iconFirst="false" type="Transparent" enabled="true">
+                                        <layoutData>
+                                            <OverflowToolbarLayoutData moveToOverflow="true"/>
+                                        </layoutData>
+                                    </Button>
+                                    <Button text="" icon="sap-icon://add" iconFirst="true" type="Transparent" enabled="true" press="_onFioriListReportActionButtonPress">
+                                        <layoutData>
+                                            <OverflowToolbarLayoutData moveToOverflow="true"/>
+                                        </layoutData>
+                                    </Button>
+                                    <Button icon="sap-icon://action-settings" type="Transparent">
+                                        <layoutData>
+                                            <OverflowToolbarLayoutData moveToOverflow="true"/>
+                                        </layoutData>
+                                    </Button>
+                                </content>
+                            </OverflowToolbar>
+                        </headerToolbar>
+                        <columns>
+                            <Column width="auto" minScreenWidth="Phone">
+                                <header>
+                                    <Text text="Producto" width="auto"/>
+                                </header>
+                            </Column>
+                            <Column width="auto" minScreenWidth="Phone">
+                                <header>
+                                    <Text text="Categoría" width="auto"/>
+                                </header>
+                            </Column>
+                            <Column width="auto" hAlign="Right" minScreenWidth="Phone">
+                                <header>
+                                    <Text text="Precio" width="auto"/>
+                                </header>
+                            </Column>
+                            <Column width="auto" minScreenWidth="Phone">
+                                <header>
+                                    <Text text="Disponibilidad" width="auto"/>
+                                </header>
+                            </Column>
+                        </columns>
+                        <items>
+                            <ColumnListItem type="Navigation">
+                                <cells>
+                                    <ObjectStatus text="{Descripcion}" width="auto"/>
+                                    <ObjectStatus text="{Categoria}" width="auto"/>
+                                    <HBox alignItems="Stretch" justifyContent="End" alignContent="Stretch">
+                                        <items>
+                                            <ObjectNumber number="{path:'Precio', formatter:'.formatFractionDigitFromValue'}" unit="{UnidadPr}" emphasized="false"/>
+                                        </items>
+                                    </HBox>
+                                    <ObjectStatus text="{StockLevel}" width="auto" state="{path:'StockLevelCC', formatter:'.formatStateFromCriticality'}" icon="{path:'StockLevelCC', formatter:'.formatIconFromCriticality'}"/>
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                </items>
+            </VBox>
+        </f:content>
+        <f:footer>
+            <OverflowToolbar design="auto">
+                <content>
+                    <ToolbarSpacer/>
+                    <Button text="Save" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                    <Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                </content>
+            </OverflowToolbar>
+        </f:footer>
+    </f:DynamicPage>
+</mvc:View>

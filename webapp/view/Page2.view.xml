@@ -1,0 +1,99 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.untitledPrototypeCopy.controller.Page2" xmlns:uxap="sap.uxap" xmlns="sap.m">
+    <uxap:ObjectPageLayout showTitleInHeaderContent="false" showHeaderContent="true" showEditHeaderButton="false" showFooter="false" class="sapUiSizeCompact">
+        <uxap:headerTitle>
+            <uxap:ObjectPageHeader objectTitle="{Descripcion}" objectSubtitle="{ID}" isObjectIconAlwaysVisible="false" isObjectTitleAlwaysVisible="true" isObjectSubtitleAlwaysVisible="true" showPlaceholder="true" objectImageURI="/build/uilibraries/content/static/image-canvas.svg">
+                <uxap:navigationBar>
+                    <Bar>
+                        <contentLeft>
+                            <Button type="Back" press="_onFioriObjectPageHeaderPress"/>
+                        </contentLeft>
+                        <contentMiddle>
+                            <Title text="Producto"/>
+                        </contentMiddle>
+                        <contentRight/>
+                    </Bar>
+                </uxap:navigationBar>
+                <uxap:actions>
+                    <Button text="Edit" iconFirst="false" type="Emphasized" enabled="true">
+                        <layoutData>
+                            <OverflowToolbarLayoutData moveToOverflow="true"/>
+                        </layoutData>
+                    </Button>
+                    <Button text="Delete" iconFirst="false" type="Transparent" enabled="true">
+                        <layoutData>
+                            <OverflowToolbarLayoutData moveToOverflow="true"/>
+                        </layoutData>
+                    </Button>
+                    <Button text="" icon="sap-icon://action" iconFirst="true" type="Transparent" enabled="true">
+                        <layoutData>
+                            <OverflowToolbarLayoutData moveToOverflow="true"/>
+                        </layoutData>
+                    </Button>
+                </uxap:actions>
+                <uxap:breadCrumbsLinks/>
+            </uxap:ObjectPageHeader>
+        </uxap:headerTitle>
+        <uxap:headerContent>
+            <VBox>
+                <items>
+                    <HBox>
+                        <items>
+                            <Label text="Categoría"/>
+                            <Label text=":" class="sapUiTinyMarginEnd"/>
+                            <ObjectStatus text="{Categoria}"/>
+                        </items>
+                    </HBox>
+                    <HBox>
+                        <items>
+                            <Label text="Temporada"/>
+                            <Label text=":" class="sapUiTinyMarginEnd"/>
+                            <ObjectStatus text="{Temporada}"/>
+                        </items>
+                    </HBox>
+                    <HBox>
+                        <items>
+                            <Label text="Fecha Compra"/>
+                            <Label text=":" class="sapUiTinyMarginEnd"/>
+                            <ObjectStatus text="{FechaCompra}"/>
+                        </items>
+                    </HBox>
+                    <HBox>
+                        <items>
+                            <Label text="Marca"/>
+                            <Label text=":" class="sapUiTinyMarginEnd"/>
+                            <ObjectStatus text="{Marca}"/>
+                        </items>
+                    </HBox>
+                </items>
+            </VBox>
+            <VBox>
+                <items>
+                    <Title text="Disponibilidad"/>
+                    <ObjectNumber number="{path:'StockLevel', formatter:'.formatFractionDigitFromValue'}" unit="" state="{path:'StockLevelCC', formatter:'.formatStateFromCriticality'}"/>
+                </items>
+            </VBox>
+            <VBox>
+                <items>
+                    <Title text="Precio"/>
+                    <ObjectNumber number="{path:'Precio', formatter:'.formatFractionDigitFromValue'}" unit="{UnidadPr}" state="None"/>
+                </items>
+            </VBox>
+            <VBox>
+                <items>
+                    <Title text="Costo"/>
+                    <ObjectNumber number="{path:'Costo', formatter:'.formatFractionDigitFromValue'}" unit="{UnidadPr2}" state="None"/>
+                </items>
+            </VBox>
+        </uxap:headerContent>
+        <uxap:sections/>
+        <uxap:footer>
+            <OverflowToolbar design="auto">
+                <content>
+                    <ToolbarSpacer/>
+                    <Button text="Save" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                    <Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                </content>
+            </OverflowToolbar>
+        </uxap:footer>
+    </uxap:ObjectPageLayout>
+</mvc:View>

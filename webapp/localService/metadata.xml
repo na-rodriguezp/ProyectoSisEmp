@@ -1,0 +1,26 @@
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="e5db40af8292a26d183a9862" xml:lang="en" sap:schema-version="0000" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityContainer Name="e5db40af8292a26d183a9862_Entities" m:IsDefaultEntityContainer="true">
+                <EntitySet Name="ProductSet" EntityType="e5db40af8292a26d183a9862.Product" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+            </EntityContainer>
+            <EntityType Name="Product">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="Descripcion" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Descripcion"/>
+                <Property Name="Categoria" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Categoria"/>
+                <Property Name="Precio" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Precio"/>
+                <Property Name="UnidadPr" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="UnidadPr"/>
+                <Property Name="FechaCompra" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="FechaCompra"/>
+                <Property Name="StockLevel" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="StockLevel"/>
+                <Property Name="StockLevelCC" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="StockLevelCC"/>
+                <Property Name="Temporada" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Temporada"/>
+                <Property Name="Costo" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Costo"/>
+                <Property Name="UnidadPr2" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="UnidadPr2"/>
+                <Property Name="Marca" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Marca"/>
+            </EntityType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
